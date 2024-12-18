@@ -1,20 +1,22 @@
 import ffmpeg
+import os
 
 ##########
 # Inputs #
 ##########
 
 START_TIME = "00:00:08"
-END_TIME   = "00:04:05" # False # "00:00:30"
+END_TIME   = "00:01:05" # False # "00:00:30"
 
 ####################
 # Global Variables #
 ####################
 
-BASE_DIR = "/Users/csuplinski/Desktop/mp3_mp4_tools/dev"
+BASE_DIR = os.path.dirname(os.path.realpath(__file__))
+DEV_DIR  = '{0}/dev'.format( BASE_DIR )
 
-INPUT_FILE  = "{0}/input.mp3".format(  BASE_DIR )
-OUTPUT_FILE = "{0}/trimmed.mp3".format( BASE_DIR )
+INPUT_FILE  = "{0}/input.mp3".format(   DEV_DIR )
+OUTPUT_FILE = "{0}/trimmed.mp3".format( DEV_DIR )
 
 ############
 # Trim mp4 #

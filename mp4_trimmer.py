@@ -1,21 +1,26 @@
 import ffmpeg
+import os
 
 ##########
 # Inputs #
 ##########
 
-START_TIME = "00:00:15" # False # "00:00:03"
-END_TIME   = "00:03:50" # False # "00:00:30" # "00:00:06.5"
+START_TIME = False
+END_TIME   = False
 CRF        = 28    # Typical values between [18,28]. Higher value => lesser quality and lower file size.
+
+# START_TIME = "00:00:02" 
+END_TIME   = "00:00:02" # "00:00:06.5"
 
 ####################
 # Global Variables #
 ####################
 
-BASE_DIR = "/Users/csuplinski/Desktop/mp3_mp4_tools/dev"
+BASE_DIR = os.path.dirname(os.path.realpath(__file__))
+DEV_DIR  = '{0}/dev'.format( BASE_DIR )
 
-INPUT_FILE  = "{0}/input.mp4".format(  BASE_DIR )
-OUTPUT_FILE = "{0}/trimmed.mp4".format( BASE_DIR )
+INPUT_FILE  = "{0}/input.mp4".format(   DEV_DIR )
+OUTPUT_FILE = "{0}/trimmed.mp4".format( DEV_DIR )
 
 ############
 # Trim mp4 #
